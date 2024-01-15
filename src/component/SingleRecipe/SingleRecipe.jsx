@@ -6,9 +6,9 @@ const SingleRecipe = () => {
     const { name, ingredients, instruction } = loader
     // console.log(loader);
     return (
-        <div className="mt-10 flex justify-center text-center mx-2 lg:mx-10 lg:text-start
+        <div className="mt-10 flex justify-center text-center mx-2 lg:mx-10 lg:text-start 
         ">
-            <div>
+            <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl font-semibold my-10 underline">Full Details About : {name} Recipe</h2>
                 <div className="border-2 py-16 px-4 lg:px-28  rounded-md shadow hover:shadow-md cursor-pointer h-fit">
 

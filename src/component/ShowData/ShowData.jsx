@@ -1,20 +1,21 @@
 import { useQuery } from "@tanstack/react-query";
 import DeleteData from "./DeleteData/DeleteData";
 import { Link } from "react-router-dom";
+import SearchBar from "../SearchBar/SearchBar";
 
 const ShowData = () => {
      const { isLoading, data, refetch } = useQuery({
         queryKey: ['getRecipeData'],
         queryFn: () =>
-          fetch('http://localhost:5000/getRecipe').then((res) =>
+          fetch(`http://localhost:5000/getRecipe?search`).then((res) =>
             res.json()
           ),
       })
-      refetch()
       if (isLoading) return <div className="text-center text-xl font-bold">Loading...</div>
     return (
         <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl my-16 font-semibold text-center">Our Total Recipe: {data?.length}</h2>
+            <SearchBar />
             <div className="grid lg:grid-cols-3 gap-7 mx-2 mt-14 mb-20">
                 {
                     data?.map(item => (

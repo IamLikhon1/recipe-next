@@ -33,7 +33,6 @@ const FormPage = () => {
     return (
         <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl text-center font-bold mt-20">Recipe App</h2>
-
             <div className="flex justify-center mt-10">
                 {/* form */}
                 <form onSubmit={handleSubmit(onSubmit)} className="lg:w-[45%] w-full mx-2 border-2 py-8 px-5 rounded-md shadow-md">
