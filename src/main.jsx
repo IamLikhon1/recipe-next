@@ -5,18 +5,35 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import App from './App';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import SingleRecipe from './component/SingleRecipe/SingleRecipe';
+import Main from './layout/Main';
+import App from './App'
+// Create a client
+const queryClient = new QueryClient()
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
-    children:[
-      
+    element: <Main />,
+    children: [
+      {
+        path: '/',
+        element: <App/>
+      },
+      {
+        path:'/single/:id',
+        element:<SingleRecipe/>,
+        loader:({params})=>fetch(`http://localhost:5000/getRecipe/${params.id}`)
+      }
     ]
   },
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    {/* // Provide the client to your App */}
+
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>,
 )

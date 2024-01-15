@@ -1,14 +1,13 @@
-import { Toaster } from 'react-hot-toast';
-import FormPage from './component/FormPage/FormPage'
+import FormPage from "./component/FormPage/FormPage";
+import ShowData from "./component/ShowData/ShowData";
 
-function App() {
-
+const App = () => {
   return (
-    <>
-      <Toaster />
-      <FormPage />
-    </>
-  )
-}
+    <div>
+      <FormPage/>
+      <ShowData/>
+    </div>
+  );
+};
 
-export default App
+export default App;
