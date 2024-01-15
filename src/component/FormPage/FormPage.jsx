@@ -49,7 +49,7 @@ const FormPage = () => {
                     <textarea type="text" name='instruction' {...register("instruction", { required: true })} className="w-full lg:w-[90%] py-6 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="Recipe Instruction  " required />
                     {/* button */}
                     <div className="flex justify-center">
-                        <input type="submit" value='SUBMIT' name='ingredients ' className="w-full lg:w-[90%] py-4 px-3 font-semibold border-2 bg-blue-400 text-white rounded-lg  mt-3 cursor-pointer" placeholder="Recipe Ingredients " required />
+                        <input type="submit" value='SUBMIT' name='ingredients ' className="w-full lg:w-[90%] py-4 px-3 font-semibold border-2 bg-[#07332F] text-white rounded-lg  mt-3 cursor-pointer" placeholder="Recipe Ingredients " required />
 
                     </div>
                 </form>

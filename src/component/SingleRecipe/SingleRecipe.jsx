@@ -14,7 +14,7 @@ const SingleRecipe = () => {
 
                     {/* Edit icon */}
                     <div onClick={() => document.getElementById('my_modal_3').showModal()} className="relative">
-                        <span className="text-4xl absolute right-0 bottom-3 hover:text-blue-600 duration-300 "> <FiEdit /></span>
+                        <span className="text-5xl absolute right-0 bottom-3 text-[#07332F] duration-300  "> <FiEdit /></span>
                     </div>
                     {/* show modal */}
 

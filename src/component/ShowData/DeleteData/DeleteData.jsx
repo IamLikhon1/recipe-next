@@ -18,7 +18,7 @@ const DeleteData = ({ item, refetch }) => {
     }
     return (
         <div>
-            <button onClick={() => handleDelete(_id)} className="w-full mt-4  py-3 rounded-md border-2 border-red-400 text-black hover:bg-red-500 hover:text-white font-semibold duration-500 ">Delete</button>
+            <button onClick={() => handleDelete(_id)} className="w-full mt-4  py-3 rounded-md border-2 border-red-400 text-black hover:bg-red-500 hover:text-white font-semibold duration-500 ">Delete The Recipe</button>
         </div>
     );
 };
