@@ -14,7 +14,7 @@ const FormPage = () => {
         const instruction = data.instruction;
         const allData = { name, ingredients, instruction };
 
-        fetch('http://localhost:5000/postRecipe', {
+        fetch('https://recipe-server-production.up.railway.app/postRecipe', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       {
         path:'/single/:id',
         element:<SingleRecipe/>,
-        loader:({params})=>fetch(`http://localhost:5000/getRecipe/${params.id}`)
+        loader:({params})=>fetch(`https://recipe-server-production.up.railway.app/getRecipe/${params.id}`)
       }
     ]
   },

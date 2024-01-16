@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 const DeleteData = ({ item, refetch }) => {
     const { _id } = item
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/deleteRecipe/${id}`, {
+        fetch(`https://recipe-server-production.up.railway.app/deleteRecipe/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
@@ -13,8 +13,6 @@ const DeleteData = ({ item, refetch }) => {
                 }
                 refetch()
             })
-
-
     }
     return (
         <div>

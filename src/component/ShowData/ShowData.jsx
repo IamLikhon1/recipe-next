@@ -2,12 +2,15 @@ import { useQuery } from "@tanstack/react-query";
 import DeleteData from "./DeleteData/DeleteData";
 import { Link } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
+import { useState } from "react";
+import TopLoaderShow from "../TopLoaderShow/TopLoaderShow";
 
 const ShowData = () => {
+    const [progress, setProgress] = useState(0)
      const { isLoading, data, refetch } = useQuery({
         queryKey: ['getRecipeData'],
         queryFn: () =>
-          fetch(`http://localhost:5000/getRecipe?search`).then((res) =>
+          fetch(`https://recipe-server-production.up.railway.app/getRecipe?search`).then((res) =>
             res.json()
           ),
       })
@@ -23,8 +26,10 @@ const ShowData = () => {
 
                             <div className="border-2 py-10 px-3 rounded-md text-center">
                                 <h2 className="text-2xl font-semibold">{item.name}</h2>
+                                {/* TopShowLoader */}
+                                <TopLoaderShow progress={progress}setProgress={setProgress}/>
                                 {/* view more button */}
-                               <Link to={`/single/${item._id}`}> <button className="w-full py-3 hover:text-black font-semibold bg-[#07332F] border-2 border-[#07332F] mt-7 rounded-md hover:bg-transparent text-white duration-500">View More</button></Link>
+                               <Link to={`/single/${item._id}`}> <button onClick={() => setProgress(100)} className="w-full py-3 hover:text-black font-semibold bg-[#07332F] border-2 border-[#07332F] mt-7 rounded-md hover:bg-transparent text-white duration-500">View More</button></Link>
 
                                 {/* delete button */}
                                <DeleteData item={item} refetch={refetch}/>

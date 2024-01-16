@@ -15,7 +15,7 @@ const ShowModal = ({ loader }) => {
         const ingredients = data.ingredients;
         const instruction = data.instruction;
         const allData = { name, ingredients, instruction };
-        fetch(`http://localhost:5000/updateRecipe/${_id}`, {
+        fetch(`https://recipe-server-production.up.railway.app/updateRecipe/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
